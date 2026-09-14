@@ -12,14 +12,14 @@
         <TextBox x:Name="PeriodMonths" HorizontalAlignment="Left" Margin="134,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Period_TextChanged"/>
         <Label x:Name="PercentIncome" Content="" HorizontalAlignment="Left" Margin="570,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,1.151"/>
         <Label x:Name="MoneyIncome" Content="" HorizontalAlignment="Left" Margin="570,350,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Computing" Content="Button" HorizontalAlignment="Left" Margin="520,102,0,0" VerticalAlignment="Top" Click="Computing_Click" Height="59" Width="139"/>
-        <Label Content="How much money will you add to account" HorizontalAlignment="Left" Margin="77,111,0,0" VerticalAlignment="Top"/>
-        <Label Content="Period" HorizontalAlignment="Left" Margin="177,0,0,0" VerticalAlignment="Center"/>
-        <Label Content="Deposit rate" HorizontalAlignment="Left" Margin="157,281,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Computing" Content="Calculate" HorizontalAlignment="Left" Margin="525,101,0,0" VerticalAlignment="Top" Click="Computing_Click" Height="59" Width="139" FontFamily="Yu Gothic Light" FontSize="18"/>
+        <Label Content="How much money will you add to account?" HorizontalAlignment="Left" Margin="33,98,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Period" HorizontalAlignment="Left" Margin="157,191,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Deposit rate" HorizontalAlignment="Left" Margin="134,273,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label x:Name="TotalAmount" Content="" HorizontalAlignment="Left" Margin="570,217,0,0" VerticalAlignment="Top"/>
-        <Label Content="Percent income" HorizontalAlignment="Left" Margin="542,250,0,0" VerticalAlignment="Top"/>
-        <Label Content="Money income" HorizontalAlignment="Left" Margin="545,319,0,0" VerticalAlignment="Top"/>
-        <Label Content="Total amount" HorizontalAlignment="Left" Margin="550,191,0,0" VerticalAlignment="Top"/>
+        <Label Content="Percent income" HorizontalAlignment="Left" Margin="532,249,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Money income" HorizontalAlignment="Left" Margin="532,316,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Total amount" HorizontalAlignment="Left" Margin="541,191,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="Compound interest calculator" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="36"/>
 
     </Grid>

@@ -7,7 +7,7 @@ namespace HardProcentagies
 {
     public class Calculator
     {
-        public static (double, double, double) CountPercentage(double rate, double money,  int periodMonth)
+        public static (double, double, double) CountPercentage(double rate, double money, int periodMonth)
         {
             double totalMoney = money * Math.Pow((1 + (rate / 1200)), periodMonth);
             double income = totalMoney - money;
@@ -17,4 +17,3 @@ namespace HardProcentagies
         }
     }
 }
-

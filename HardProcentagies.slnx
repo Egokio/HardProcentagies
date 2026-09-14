@@ -1,3 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Calculaator/Calculaator.csproj" Id="e46247ab-be05-4ae1-b856-6acd60403865" />
   <Project Path="HardProcentagies/HardProcentagies.csproj" />
 </Solution>
