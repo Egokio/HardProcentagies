@@ -5,22 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardProcentagies"
         mc:Ignorable="d"
-        Title="Hard Percentages" Height="450" Width="800">
+        Title="Liitintress" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFF8F9FB" Offset="1"/>
+            <GradientStop Color="#FE111111" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Foreground>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FF881F1F" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Foreground>
     <Grid>
-        <TextBox x:Name="Money" HorizontalAlignment="Left" Margin="134,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Money_TextChanged"/>
-        <TextBox x:Name="Rate" HorizontalAlignment="Left" Margin="134,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Rate_TextChanged"/>
-        <TextBox x:Name="PeriodMonths" HorizontalAlignment="Left" Margin="134,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Period_TextChanged"/>
-        <Label x:Name="PercentIncome" Content="" HorizontalAlignment="Left" Margin="570,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,1.151"/>
-        <Label x:Name="MoneyIncome" Content="" HorizontalAlignment="Left" Margin="570,350,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Computing" Content="Calculate" HorizontalAlignment="Left" Margin="525,101,0,0" VerticalAlignment="Top" Click="Computing_Click" Height="59" Width="139" FontFamily="Yu Gothic Light" FontSize="18"/>
-        <Label Content="How much money will you add to account?" HorizontalAlignment="Left" Margin="33,98,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Period" HorizontalAlignment="Left" Margin="157,191,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Deposit rate" HorizontalAlignment="Left" Margin="134,273,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="TotalAmount" Content="" HorizontalAlignment="Left" Margin="570,217,0,0" VerticalAlignment="Top"/>
-        <Label Content="Percent income" HorizontalAlignment="Left" Margin="532,249,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Money income" HorizontalAlignment="Left" Margin="532,316,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Total amount" HorizontalAlignment="Left" Margin="541,191,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="Compound interest calculator" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <TextBox x:Name="Money" HorizontalAlignment="Left" Margin="134,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Money_TextChanged" FontFamily="Copperplate Gothic Light"/>
+        <TextBox x:Name="Rate" HorizontalAlignment="Left" Margin="134,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Rate_TextChanged" FontFamily="Copperplate Gothic Light"/>
+        <TextBox x:Name="PeriodMonths" HorizontalAlignment="Left" Margin="134,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Period_TextChanged" FontFamily="Copperplate Gothic Light"/>
+        <Label x:Name="PercentIncome" Content="" HorizontalAlignment="Left" Margin="573,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,1.151" FontFamily="Copperplate Gothic Light"/>
+        <Label x:Name="MoneyIncome" Content="" HorizontalAlignment="Left" Margin="586,359,0,0" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light"/>
+        <Button x:Name="Computing" Content="Calculate" HorizontalAlignment="Left" Margin="525,101,0,0" VerticalAlignment="Top" Click="Computing_Click" Height="59" Width="139" FontFamily="Copperplate Gothic Bold" FontSize="18">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFD4BCBC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="How much money will you add to account? ($) " HorizontalAlignment="Left" Margin="2,101,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Copperplate Gothic Light"/>
+        <Label Content="Period(Months)" HorizontalAlignment="Left" Margin="128,184,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Copperplate Gothic Light"/>
+        <Label Content="Deposit rate(%)" HorizontalAlignment="Left" Margin="128,270,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Copperplate Gothic Light"/>
+        <Label x:Name="TotalAmount" Content="" HorizontalAlignment="Left" Margin="573,226,0,0" VerticalAlignment="Top" FontFamily="Copperplate Gothic Light"/>
+        <Label Content="Percent income(%)" HorizontalAlignment="Left" Margin="516,253,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Copperplate Gothic Light"/>
+        <Label Content="Money income($)" HorizontalAlignment="Left" Margin="521,316,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Copperplate Gothic Light"/>
+        <Label x:Name="Resultate" Content="Total amount($)" HorizontalAlignment="Left" Margin="527,194,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Copperplate Gothic Light"/>
+        <Label Content="Compound interest calculator" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Copperplate Gothic Bold"/>
 
     </Grid>
 </Window>

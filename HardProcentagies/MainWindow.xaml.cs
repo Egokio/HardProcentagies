@@ -39,29 +39,41 @@ namespace HardProcentagies
 
         private void Computing_Click(object sender, RoutedEventArgs e)
         {
-            if (!double.TryParse(Money.Text, out double moneyInput) || moneyInput <= 0)
+            // Clear previous result
+            TotalAmount.Content = "";
+            PercentIncome.Content = "";
+            MoneyIncome.Content = "";
+
+            if (!double.TryParse(Money.Text, out double moneyInput))
             {
-               
-                    MessageBox.Show("Type correct amount!");
-                    return;
-                
+                MessageBox.Show("Type correct amount!");
+                return;
             }
 
-            if (!int.TryParse(PeriodMonths.Text, out int periodMonthsInput) || periodMonthsInput <= 0)
+            if (!int.TryParse(PeriodMonths.Text, out int periodMonthsInput))
             {
-             
-                    MessageBox.Show("Wrong month input");
-                    return;
-                
+                MessageBox.Show("Wrong month input");
+                return;
             }
-            if (!double.TryParse(Rate.Text, out double rateInput) || rateInput <= 0)
-            {
 
-                    MessageBox.Show("Wrong rate input");
-                    return;
-                
+            if (!double.TryParse(Rate.Text, out double rateInput))
+            {
+                MessageBox.Show("Wrong rate input");
+                return;
             }
-            var (totalMoney, incomePercentage, income) = Calculator.CountPercentage(rateInput, moneyInput, periodMonthsInput);
+
+            if (!Calculator.Validate(rateInput, moneyInput, periodMonthsInput))
+            {
+                MessageBox.Show("Values must be greater than zero.");
+                return;
+            }
+
+            var (totalMoney, incomePercentage, income) =
+                Calculator.CountPercentage(
+                    rateInput,
+                    moneyInput,
+                    periodMonthsInput);
+
             TotalAmount.Content = totalMoney.ToString();
             PercentIncome.Content = incomePercentage.ToString();
             MoneyIncome.Content = income.ToString();

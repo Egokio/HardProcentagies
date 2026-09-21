@@ -1,47 +1,133 @@
 # Compound Interest Calculator
 
-A simple desktop application interface designed to calculate the growth of an investment over time using the power of compound interest. 
+A simple desktop application for calculating the growth of an investment using compound interest.
 
 ## Features
 
+The application allows the user to enter the initial amount, investment period and annual interest rate, then calculates the final amount and income.
+
 ### Input Fields
-* **Principal Amount:** "How much money will you add to account" (Initial deposit).
-* **Period:** The duration of the deposit (typically measured in years).
-* **Deposit Rate:** The annual interest rate percentage (e.g., 5 for 5%).
 
-### Actions
-* **Calculate Button:** Processes the inputs to generate the financial breakdown.
+* **Principal Amount** — the initial amount of money deposited into the account.
 
-### Output Fields
-* **Total Amount:** The final balance including the principal and accumulated interest.
-* **Percent Income:** The total percentage growth of the initial investment.
-* **Money Income:** The absolute net profit earned purely from interest.
+  * Unit: currency / money amount
+  * Must be greater than 0.
 
----
+* **Period** — the investment duration.
 
-## Mathematical Logic
+  * Unit: months
+  * Must be greater than 0.
 
-The application calculates the outputs using the standard annual compound interest formula:
+* **Deposit Rate** — the annual interest rate.
 
-$$A = P \left(1 + \frac{r}{100}\right)^t$$
+  * Unit: percentage (%)
+  * Example: `5` means 5% per year.
+  * Must be greater than 0.
+
+## Calculation
+
+The application uses monthly compound interest based on an annual interest rate.
+
+The formula is:
+
+```text
+A = P × (1 + r / 1200)^m
+```
 
 Where:
-* **A** = Total amount
-* **P** = Principal amount (Money added to account)
-* **r** = Deposit rate (Annual interest rate)
-* **t** = Period (Time in years)
 
-### Derived Metrics
-* **Money Income** = $A - P$
-* **Percent Income** = $\left(\frac{A - P}{P}\right) \times 100$
+* `A` — Total Amount
+* `P` — Principal Amount
+* `r` — annual interest rate in percent
+* `m` — investment period in months
 
----
+The income is calculated as:
 
-## Suggested Code Structure (Event Handler)
+```text
+Money Income = A - P
+```
 
-When the user clicks the **Button**, the following logical flow should execute:
+The percentage income is calculated as:
 
-1. **Validate inputs:** Ensure all three textboxes contain valid positive numbers.
-2. **Perform calculation:** Apply the formulas listed above.
-3. **Format outputs:** Display the results in the respective labels, rounding financial values to two decimal places (e.g., `$1,234.56`).
-erest.
+```text
+Percent Income = ((A - P) / P) × 100
+```
+
+The financial results are rounded to two decimal places.
+
+## Outputs
+
+After a successful calculation, the application displays:
+
+* **Total Amount** — the final amount including the initial investment and interest.
+
+  * Unit: currency / money amount
+
+* **Percent Income** — the percentage growth compared with the initial amount.
+
+  * Unit: percentage (%)
+
+* **Money Income** — the amount earned from interest.
+
+  * Unit: currency / money amount
+
+## Input Validation
+
+The application checks that:
+
+1. The Principal Amount is a valid number.
+2. The Period is a valid whole number of months.
+3. The Deposit Rate is a valid number.
+4. All entered values are greater than zero.
+
+If an input is invalid, an error message is displayed and the calculation is not performed.
+
+Previous calculation results are cleared when a new calculation is started, so an old result is not displayed when an error occurs.
+
+## Project Structure
+
+The solution consists of separate projects:
+
+* **HardProcentagies** — the desktop application and user interface.
+* **Calculaator** — the Class Library containing the calculation logic and value validation.
+
+The calculation and validation logic is kept separately from the user interface.
+
+The `Calculator` class provides static methods for:
+
+* validating input values;
+* calculating the total amount;
+* calculating percentage income;
+* calculating money income.
+
+
+## How to Run
+
+1. Open the solution in Visual Studio.
+2. Set **HardProcentagies** as the Startup Project.
+3. Build the solution.
+4. Run the application.
+5. Enter the Principal Amount, Period in months and annual Deposit Rate.
+6. Press the **Calculate** button.
+
+## Example
+
+For example, if:
+
+```text
+Principal Amount = 1000
+Period = 12 months
+Deposit Rate = 5%
+```
+
+the application calculates the final amount using monthly compound interest and displays the total amount and income.
+
+## Error Handling
+
+If the user enters invalid data, the application displays an error message instead of performing the calculation.
+
+The previous result is also cleared to prevent outdated calculation results from remaining visible.
+
+## Purpose
+
+The purpose of this project is to demonstrate a simple compound interest calculator while keeping the user interface separate from the calculation and validation logic.
